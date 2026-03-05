@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F155A3F6-FAEE-46EF-A256-CCD3E086CC3B}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SmartBudgetiOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SmartBudget2</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+<CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>true</BuildIpa>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>true</BuildIpa>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <BuildIpa>true</BuildIpa>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: Grigory Buteyko (9F3L9G6C62)</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Json" />
+    <Reference Include="Mono.Security" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="SmartBudgetCommon\" />
+    <Folder Include="Resources\ru.lproj\" />
+    <Folder Include="Resources\en.lproj\" />
+    <Folder Include="Resources\xlsx\" />
+    <Folder Include="Resources\cats\" />
+    <Folder Include="Resources\new_design\" />
+    <Folder Include="Resources\ca.lproj\" />
+    <Folder Include="Resources\de.lproj\" />
+    <Folder Include="Resources\es.lproj\" />
+    <Folder Include="Resources\fr.lproj\" />
+    <Folder Include="Resources\it.lproj\" />
+    <Folder Include="Resources\ja.lproj\" />
+    <Folder Include="Resources\ko.lproj\" />
+    <Folder Include="Resources\nl.lproj\" />
+    <Folder Include="Resources\pl.lproj\" />
+    <Folder Include="Resources\pt.lproj\" />
+    <Folder Include="Resources\sv.lproj\" />
+    <Folder Include="Resources\th.lproj\" />
+    <Folder Include="Resources\uk.lproj\" />
+    <Folder Include="Resources\zh-Hans.lproj\" />
+    <Folder Include="Resources\zh-Hant.lproj\" />
+    <Folder Include="Resources\tr.lproj\" />
+    <Folder Include="Resources\ar.lproj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="SmartBudgetCommon\Document.cs" />
+    <Compile Include="SmartBudgetCommon\Documents.cs" />
+    <Compile Include="SmartBudgetCommon\DBCommand.cs" />
+    <Compile Include="SmartBudgetCommon\DBAccount.cs" />
+    <Compile Include="SmartBudgetCommon\DBExpense.cs" />
+    <Compile Include="SmartBudgetCommon\DBAccountBalance.cs" />
+    <Compile Include="SmartBudgetCommon\SQLite.cs" />
+    <Compile Include="SmartBudgetCommon\Change.cs" />
+    <Compile Include="SheetVC.cs" />
+    <Compile Include="SheetVC.designer.cs">
+      <DependentUpon>SheetVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\ExpenseResurrector.cs" />
+    <Compile Include="SmartBudgetCommon\JSONHelper.cs" />
+    <Compile Include="SmartBudgetCommon\DBReccurence.cs" />
+    <Compile Include="AccountsVC.cs" />
+    <Compile Include="ExpenseCell.cs" />
+    <Compile Include="ExpenseCell.designer.cs">
+      <DependentUpon>ExpenseCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsVC.cs" />
+    <Compile Include="SettingsVC.designer.cs">
+      <DependentUpon>SettingsVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameValueCell.cs" />
+    <Compile Include="NameValueCell.designer.cs">
+      <DependentUpon>NameValueCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\i18n.cs" />
+    <Compile Include="CurrencyCell.cs" />
+    <Compile Include="CurrencyCell.designer.cs">
+      <DependentUpon>CurrencyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyVC.cs" />
+    <Compile Include="SmartBudgetCommon\AmountEnter.cs" />
+    <Compile Include="SmartBudgetCommon\Sum.cs" />
+    <Compile Include="AmountVC.cs" />
+    <Compile Include="AmountVC.designer.cs">
+      <DependentUpon>AmountVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyFormat.cs" />
+    <Compile Include="ExpenseVC.cs" />
+    <Compile Include="ExpenseVC.designer.cs">
+      <DependentUpon>ExpenseVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryVC.cs" />
+    <Compile Include="Category4Cell.cs" />
+    <Compile Include="Category4Cell.designer.cs">
+      <DependentUpon>Category4Cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategorySquareView.cs" />
+    <Compile Include="CategorySquareView.designer.cs">
+      <DependentUpon>CategorySquareView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\DBCategory.cs" />
+    <Compile Include="SmartBudgetCommon\DBSheet.cs" />
+    <Compile Include="NameVC.cs" />
+    <Compile Include="NameVC.designer.cs">
+      <DependentUpon>NameVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SheetsVC.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeSheetRemove.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeSheetCreate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeExpenseCreate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeCategoryCreate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeAccountCreate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeSheetUpdate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeSheetArrange.cs" />
+    <Compile Include="SimpleCell.cs" />
+    <Compile Include="SimpleCell.designer.cs">
+      <DependentUpon>SimpleCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\DBExpenseStrings.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeAccountArrange.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeAccountRemove.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeAccountUpdate.cs" />
+    <Compile Include="AppDelegateFullVersion.cs" />
+    <Compile Include="SmartBudgetCommon\DBKeyValue.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeExpenseUpdate.cs" />
+    <Compile Include="AccountCell.cs" />
+    <Compile Include="AccountCell.designer.cs">
+      <DependentUpon>AccountCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountCurrencyLine.cs" />
+    <Compile Include="AccountCurrencyLine.designer.cs">
+      <DependentUpon>AccountCurrencyLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\StringFolding.cs" />
+    <Compile Include="SheetsSelect.cs" />
+    <Compile Include="CurrencySelect.cs" />
+    <Compile Include="AccountSelect.cs" />
+    <Compile Include="FaqVC.cs" />
+    <Compile Include="FaqVC.designer.cs">
+      <DependentUpon>FaqVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimerForButton.cs" />
+    <Compile Include="RecurrenceSelect.cs" />
+    <Compile Include="DateVC.cs" />
+    <Compile Include="DateVC.designer.cs">
+      <DependentUpon>DateVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSelectVC.cs" />
+    <Compile Include="DrawVC.cs" />
+    <Compile Include="DrawVC.designer.cs">
+      <DependentUpon>DrawVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawArea.cs" />
+    <Compile Include="Image4Cell.cs" />
+    <Compile Include="Image4Cell.designer.cs">
+      <DependentUpon>Image4Cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSquareView.cs" />
+    <Compile Include="ImageSquareView.designer.cs">
+      <DependentUpon>ImageSquareView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\ChangeCategoryUpdate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeCategoryRemove.cs" />
+    <Compile Include="UILabelSelectFont.cs" />
+    <Compile Include="UIFontSelect.cs" />
+    <Compile Include="UiFontSelectCell.cs" />
+    <Compile Include="UiFontSelectCell.designer.cs">
+      <DependentUpon>UiFontSelectCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentView.cs" />
+    <Compile Include="DocumentView.designer.cs">
+      <DependentUpon>DocumentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartBudgetCommon\DispatchAdapter.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeExpenseRemove.cs" />
+    <Compile Include="SmartBudgetCommon\WebClientChinese.cs" />
+    <Compile Include="StatsVC.cs" />
+    <Compile Include="SmartBudgetCommon\XSLXExporter.cs" />
+    <Compile Include="SmartBudgetCommon\Crc32.cs" />
+    <Compile Include="SectionHeader.cs" />
+    <Compile Include="SimpleCellBig.cs" />
+    <Compile Include="SimpleCellBig.designer.cs">
+      <DependentUpon>SimpleCellBig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PinVC.cs" />
+    <Compile Include="PinVC.designer.cs">
+      <DependentUpon>PinVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIButtonSelectFont.cs" />
+    <Compile Include="UITextFieldSelectFont.cs" />
+    <Compile Include="TitleButton.cs" />
+    <Compile Include="LayoutForHelp.cs" />
+    <Compile Include="SmartBudgetCommon\StatsSettings.cs" />
+    <Compile Include="ReportsVC.cs" />
+    <Compile Include="SmartBudgetCommon\DBReport.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeReportUpdate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeReportRemove.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeReportCreate.cs" />
+    <Compile Include="SmartBudgetCommon\ChangeReportArrange.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="SheetVCSheetShower.cs" />
+    <Compile Include="SheetVCDocumentsShower.cs" />
+    <Compile Include="StatsExpensesVC.cs" />
+    <Compile Include="StatPeriodVC.cs" />
+    <Compile Include="StatPeriodVC.designer.cs">
+      <DependentUpon>StatPeriodVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CCCrypto.cs" />
+    <Compile Include="BottomPanelView.cs" />
+    <Compile Include="EmergencyVC.cs" />
+    <Compile Include="EmergencyVC.designer.cs">
+      <DependentUpon>EmergencyVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyFormatBTC.cs" />
+    <Compile Include="ReportCell.cs" />
+    <Compile Include="ReportCell.designer.cs">
+      <DependentUpon>ReportCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyFormatKZT.cs" />
+    <Compile Include="DeviceHardware.cs" />
+    <Compile Include="Flurry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Landscape.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\brush_eraser.png" />
+    <BundleResource Include="Resources\brush_marker.png" />
+    <BundleResource Include="Resources\circle_eraser.png" />
+    <BundleResource Include="Resources\circle_eraser%402x.png" />
+    <BundleResource Include="Resources\ru.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\en.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\selected_cell.png" />
+    <BundleResource Include="Resources\ru.lproj\about.html" />
+    <BundleResource Include="Resources\xlsx\[Content_Types].xml" />
+    <BundleResource Include="Resources\xlsx\_rels\.rels" />
+    <BundleResource Include="Resources\xlsx\docProps\app.xml" />
+    <BundleResource Include="Resources\xlsx\docProps\core.xml" />
+    <BundleResource Include="Resources\xlsx\xl\_rels\workbook.xml.rels" />
+    <BundleResource Include="Resources\xlsx\xl\theme\theme1.xml" />
+    <BundleResource Include="Resources\xlsx\xl\worksheets\sheet1.xml" />
+    <BundleResource Include="Resources\xlsx\xl\worksheets\sheet1Stripped.xml" />
+    <BundleResource Include="Resources\xlsx\xl\sharedStrings.xml" />
+    <BundleResource Include="Resources\xlsx\xl\sharedStringsStripped.xml" />
+    <BundleResource Include="Resources\xlsx\xl\styles.xml" />
+    <BundleResource Include="Resources\xlsx\xl\workbook.xml" />
+    <BundleResource Include="Resources\cats\CatApartment.png" />
+    <BundleResource Include="Resources\cats\CatApartment%402x.png" />
+    <BundleResource Include="Resources\cats\CatApple.png" />
+    <BundleResource Include="Resources\cats\CatApple%402x.png" />
+    <BundleResource Include="Resources\cats\CatBaby.png" />
+    <BundleResource Include="Resources\cats\CatBaby%402x.png" />
+    <BundleResource Include="Resources\cats\CatBonus.png" />
+    <BundleResource Include="Resources\cats\CatBonus%402x.png" />
+    <BundleResource Include="Resources\cats\CatCarEmergency.png" />
+    <BundleResource Include="Resources\cats\CatCarEmergency%402x.png" />
+    <BundleResource Include="Resources\cats\CatCarPlanned.png" />
+    <BundleResource Include="Resources\cats\CatCarPlanned%402x.png" />
+    <BundleResource Include="Resources\cats\CatCat.png" />
+    <BundleResource Include="Resources\cats\CatCat%402x.png" />
+    <BundleResource Include="Resources\cats\CatCelebration.png" />
+    <BundleResource Include="Resources\cats\CatCelebration%402x.png" />
+    <BundleResource Include="Resources\cats\CatCinema.png" />
+    <BundleResource Include="Resources\cats\CatCinema%402x.png" />
+    <BundleResource Include="Resources\cats\CatClothes.png" />
+    <BundleResource Include="Resources\cats\CatClothes%402x.png" />
+    <BundleResource Include="Resources\cats\CatCommunications.png" />
+    <BundleResource Include="Resources\cats\CatCommunications%402x.png" />
+    <BundleResource Include="Resources\cats\CatConvert.png" />
+    <BundleResource Include="Resources\cats\CatConvert%402x.png" />
+    <BundleResource Include="Resources\cats\CatDog.png" />
+    <BundleResource Include="Resources\cats\CatDog%402x.png" />
+    <BundleResource Include="Resources\cats\CatEducation.png" />
+    <BundleResource Include="Resources\cats\CatEducation%402x.png" />
+    <BundleResource Include="Resources\cats\CatFamily.png" />
+    <BundleResource Include="Resources\cats\CatFamily%402x.png" />
+    <BundleResource Include="Resources\cats\CatFishing.png" />
+    <BundleResource Include="Resources\cats\CatFishing%402x.png" />
+    <BundleResource Include="Resources\cats\CatFoodHome.png" />
+    <BundleResource Include="Resources\cats\CatFoodHome%402x.png" />
+    <BundleResource Include="Resources\cats\CatFoodRestaurant.png" />
+    <BundleResource Include="Resources\cats\CatFoodRestaurant%402x.png" />
+    <BundleResource Include="Resources\cats\CatFound.png" />
+    <BundleResource Include="Resources\cats\CatFound%402x.png" />
+    <BundleResource Include="Resources\cats\CatGadgets.png" />
+    <BundleResource Include="Resources\cats\CatGadgets%402x.png" />
+    <BundleResource Include="Resources\cats\CatGambling.png" />
+    <BundleResource Include="Resources\cats\CatGambling%402x.png" />
+    <BundleResource Include="Resources\cats\CatGifts.png" />
+    <BundleResource Include="Resources\cats\CatGifts%402x.png" />
+    <BundleResource Include="Resources\cats\CatGovernment.png" />
+    <BundleResource Include="Resources\cats\CatGovernment%402x.png" />
+    <BundleResource Include="Resources\cats\CatHotel.png" />
+    <BundleResource Include="Resources\cats\CatHotel%402x.png" />
+    <BundleResource Include="Resources\cats\CatHunting.png" />
+    <BundleResource Include="Resources\cats\CatHunting%402x.png" />
+    <BundleResource Include="Resources\cats\CatLoan.png" />
+    <BundleResource Include="Resources\cats\CatLoan%402x.png" />
+    <BundleResource Include="Resources\cats\CatLoanBack.png" />
+    <BundleResource Include="Resources\cats\CatLoanBack%402x.png" />
+    <BundleResource Include="Resources\cats\CatMedicine.png" />
+    <BundleResource Include="Resources\cats\CatMedicine%402x.png" />
+    <BundleResource Include="Resources\cats\CatOverwork.png" />
+    <BundleResource Include="Resources\cats\CatOverwork%402x.png" />
+    <BundleResource Include="Resources\cats\CatPet.png" />
+    <BundleResource Include="Resources\cats\CatPet%402x.png" />
+    <BundleResource Include="Resources\cats\CatRoleplaying.png" />
+    <BundleResource Include="Resources\cats\CatRoleplaying%402x.png" />
+    <BundleResource Include="Resources\cats\CatSalary.png" />
+    <BundleResource Include="Resources\cats\CatSalary%402x.png" />
+    <BundleResource Include="Resources\cats\CatSpirits.png" />
+    <BundleResource Include="Resources\cats\CatSpirits%402x.png" />
+    <BundleResource Include="Resources\cats\CatSport.png" />
+    <BundleResource Include="Resources\cats\CatSport%402x.png" />
+    <BundleResource Include="Resources\cats\CatTheaters.png" />
+    <BundleResource Include="Resources\cats\CatTheaters%402x.png" />
+    <BundleResource Include="Resources\cats\CatTransfer.png" />
+    <BundleResource Include="Resources\cats\CatTransfer%402x.png" />
+    <BundleResource Include="Resources\cats\CatTransportPublic.png" />
+    <BundleResource Include="Resources\cats\CatTransportPublic%402x.png" />
+    <BundleResource Include="Resources\cats\CatTransportTravel.png" />
+    <BundleResource Include="Resources\cats\CatTransportTravel%402x.png" />
+    <BundleResource Include="Resources\cats\CatUnknown.png" />
+    <BundleResource Include="Resources\cats\CatUnknown%402x.png" />
+    <BundleResource Include="Resources\cats\CatUser.png" />
+    <BundleResource Include="Resources\cats\CatUser%402x.png" />
+    <BundleResource Include="Resources\new_design\table_bot%402x.png" />
+    <BundleResource Include="Resources\new_design\separator%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_account_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrange_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_cloud_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_currency_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_document_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_eraser_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_export_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_help_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_help_p%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_marker_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_settings_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_stats_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_n%402x.png" />
+    <BundleResource Include="Resources\new_design\section_header%402x.png" />
+    <BundleResource Include="Resources\new_design\Gray_button_selected.png" />
+    <BundleResource Include="Resources\new_design\Gray_button_selected%402x.png" />
+    <BundleResource Include="Resources\new_design\Gray_button.png" />
+    <BundleResource Include="Resources\new_design\Gray_button%402x.png" />
+    <BundleResource Include="Resources\new_design\cloud_off%402x.png" />
+    <BundleResource Include="Resources\new_design\cloud_on%402x.png" />
+    <BundleResource Include="Resources\new_design\help_buble%402x.png" />
+    <BundleResource Include="Resources\new_design\help_tail_down%402x.png" />
+    <BundleResource Include="Resources\new_design\help_tail_up%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_n%402x.png" />
+    <BundleResource Include="Resources\new_design\error_triangle%402x.png" />
+    <BundleResource Include="Resources\new_design\attention_icon.png" />
+    <BundleResource Include="Resources\new_design\attention_icon%402x.png" />
+    <BundleResource Include="Resources\new_design\help_buble.png" />
+    <BundleResource Include="Resources\new_design\help_tail_down.png" />
+    <BundleResource Include="Resources\new_design\help_tail_up.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_small.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_small%402x.png" />
+    <BundleResource Include="Resources\new_design\error_triangle.png" />
+    <BundleResource Include="Resources\new_design\attention_calendar.png" />
+    <BundleResource Include="Resources\new_design\attention_calendar%402x.png" />
+    <BundleResource Include="Resources\new_design\checkmark.png" />
+    <BundleResource Include="Resources\new_design\checkmark%402x.png" />
+    <BundleResource Include="Resources\new_design\number_dark.png" />
+    <BundleResource Include="Resources\new_design\number_dark%402x.png" />
+    <BundleResource Include="Resources\new_design\number_delete.png" />
+    <BundleResource Include="Resources\new_design\number_delete%402x.png" />
+    <BundleResource Include="Resources\new_design\number_light.png" />
+    <BundleResource Include="Resources\new_design\number_light%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_account_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrange_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_cloud_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_currency_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_stats_s%402x.png" />
+    <BundleResource Include="Resources\new_design\navbar.png" />
+    <BundleResource Include="Resources\new_design\navbar%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_account_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_document_s%402x.png" />
+    <BundleResource Include="Resources\new_design\notebook_header.png" />
+    <BundleResource Include="Resources\new_design\notebook_header%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_1%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_2%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_3%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_static%402x.png" />
+    <BundleResource Include="Resources\new_design\progress_green.png" />
+    <BundleResource Include="Resources\new_design\progress_red.png" />
+    <BundleResource Include="Resources\new_design\bb_export_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_marker_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_eraser_s%402x.png" />
+    <BundleResource Include="Resources\new_design\category_selected%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_1%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_2%402x.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_3%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_help_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_more_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_more_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_settings_s%402x.png" />
+    <BundleResource Include="Resources\new_design\tag_normal%402x.png" />
+    <BundleResource Include="Resources\new_design\tag_sale%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_calendar_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_calendar_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_chat_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_chat_s%402x.png" />
+    <BundleResource Include="Resources\new_design\help_arrow_down%402x.png" />
+    <BundleResource Include="Resources\new_design\help_hold%402x.png" />
+    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ru.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\new_design\bb_contact_d%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_contact_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_contact_s%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_back_n%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_back_s%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_d%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_n%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_s%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_plus_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_check_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_check_s%402x.png" />
+    <BundleResource Include="Resources\new_design\error_triangle_small.png" />
+    <BundleResource Include="Resources\new_design\error_triangle_small%402x.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_n.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_n%402x.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_top.png" />
+    <BundleResource Include="Resources\new_design\attention_icon_top%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_left_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_left_s%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_right_n%402x.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_right_s%402x.png" />
+    <BundleResource Include="Resources\new_design\help_hold.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_n.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_n%402x.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_s.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_s%402x.png" />
+    <BundleResource Include="Resources\new_design\nav_back_n.png" />
+    <BundleResource Include="Resources\new_design\nav_back_s.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_d.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_n.png" />
+    <BundleResource Include="Resources\new_design\nav_btn_s.png" />
+    <BundleResource Include="Resources\new_design\corner_new.png" />
+    <BundleResource Include="Resources\new_design\corner_new%402x.png" />
+    <BundleResource Include="Resources\new_design\counter.png" />
+    <BundleResource Include="Resources\new_design\counter%402x.png" />
+    <BundleResource Include="Resources\new_design\separator.png" />
+    <BundleResource Include="Resources\new_design\section_header.png" />
+    <BundleResource Include="Resources\new_design\table_bot.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_1.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_2.png" />
+    <BundleResource Include="Resources\new_design\wifi_small_3.png" />
+    <BundleResource Include="Resources\new_design\nav_plus_n.png" />
+    <BundleResource Include="Resources\new_design\category_selected.png" />
+    <BundleResource Include="Resources\new_design\bb_account_d.png" />
+    <BundleResource Include="Resources\new_design\bb_account_n.png" />
+    <BundleResource Include="Resources\new_design\bb_account_s.png" />
+    <BundleResource Include="Resources\new_design\bb_arrange_n.png" />
+    <BundleResource Include="Resources\new_design\bb_arrange_s.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_left_n.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_left_s.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_right_n.png" />
+    <BundleResource Include="Resources\new_design\bb_arrow_right_s.png" />
+    <BundleResource Include="Resources\new_design\bb_calendar_n.png" />
+    <BundleResource Include="Resources\new_design\bb_calendar_s.png" />
+    <BundleResource Include="Resources\new_design\bb_chat_n.png" />
+    <BundleResource Include="Resources\new_design\bb_chat_s.png" />
+    <BundleResource Include="Resources\new_design\bb_check_n.png" />
+    <BundleResource Include="Resources\new_design\bb_check_s.png" />
+    <BundleResource Include="Resources\new_design\bb_cloud_n.png" />
+    <BundleResource Include="Resources\new_design\bb_cloud_s.png" />
+    <BundleResource Include="Resources\new_design\bb_contact_d.png" />
+    <BundleResource Include="Resources\new_design\bb_contact_n.png" />
+    <BundleResource Include="Resources\new_design\bb_contact_s.png" />
+    <BundleResource Include="Resources\new_design\bb_currency_n.png" />
+    <BundleResource Include="Resources\new_design\bb_currency_s.png" />
+    <BundleResource Include="Resources\new_design\bb_document_n.png" />
+    <BundleResource Include="Resources\new_design\bb_document_s.png" />
+    <BundleResource Include="Resources\new_design\bb_eraser_n.png" />
+    <BundleResource Include="Resources\new_design\bb_eraser_s.png" />
+    <BundleResource Include="Resources\new_design\bb_export_n.png" />
+    <BundleResource Include="Resources\new_design\bb_export_s.png" />
+    <BundleResource Include="Resources\new_design\bb_help_n.png" />
+    <BundleResource Include="Resources\new_design\bb_help_p.png" />
+    <BundleResource Include="Resources\new_design\bb_help_s.png" />
+    <BundleResource Include="Resources\new_design\bb_marker_n.png" />
+    <BundleResource Include="Resources\new_design\bb_marker_s.png" />
+    <BundleResource Include="Resources\new_design\bb_more_n.png" />
+    <BundleResource Include="Resources\new_design\bb_more_s.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_d.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_n.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_minus_s.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_n.png" />
+    <BundleResource Include="Resources\new_design\bb_plus_s.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_d.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_n.png" />
+    <BundleResource Include="Resources\new_design\bb_redo_s.png" />
+    <BundleResource Include="Resources\new_design\bb_settings_n.png" />
+    <BundleResource Include="Resources\new_design\bb_settings_s.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_d.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_n.png" />
+    <BundleResource Include="Resources\new_design\bb_sheet_s.png" />
+    <BundleResource Include="Resources\new_design\bb_stats_n.png" />
+    <BundleResource Include="Resources\new_design\bb_stats_s.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_d.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_n.png" />
+    <BundleResource Include="Resources\new_design\bb_trash_s.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_d.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_n.png" />
+    <BundleResource Include="Resources\new_design\bb_undo_s.png" />
+    <BundleResource Include="Resources\new_design\cloud_off.png" />
+    <BundleResource Include="Resources\new_design\cloud_on.png" />
+    <BundleResource Include="Resources\new_design\tag_normal.png" />
+    <BundleResource Include="Resources\new_design\tag_sale.png" />
+    <BundleResource Include="Resources\new_design\wifi_1.png" />
+    <BundleResource Include="Resources\new_design\wifi_2.png" />
+    <BundleResource Include="Resources\new_design\wifi_3.png" />
+    <BundleResource Include="Resources\new_design\wifi_static.png" />
+    <BundleResource Include="Resources\en.lproj\about.html" />
+    <BundleResource Include="Resources\IconArt.png" />
+    <BundleResource Include="Resources\Import1.png" />
+    <BundleResource Include="Resources\Import2.png" />
+    <BundleResource Include="Resources\Import3.png" />
+    <BundleResource Include="Resources\en.lproj\faq.html" />
+    <BundleResource Include="Resources\ca.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\ca.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\de.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\de.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\es.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\es.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\fr.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\fr.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\it.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\it.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ja.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\ja.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ko.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\ko.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\nl.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\nl.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\pl.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\pl.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\pt.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\pt.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\sv.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\sv.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\th.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\th.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\uk.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\uk.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\tr.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\tr.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\new_design\plus_btn_wide_n%402x.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_wide_s%402x.png" />
+    <BundleResource Include="Resources\new_design\Tap_to_add_new.png" />
+    <BundleResource Include="Resources\new_design\Tap_to_select.png" />
+    <BundleResource Include="Resources\new_design\cloud_off_ipad.png" />
+    <BundleResource Include="Resources\new_design\cloud_on_ipad.png" />
+    <BundleResource Include="Resources\Import4.png" />
+    <BundleResource Include="Resources\ar.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\ar.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ar.lproj\faq.html" />
+    <BundleResource Include="Resources\new_design\counter2.png" />
+    <BundleResource Include="Resources\new_design\counter2%402x.png" />
+    <BundleResource Include="Resources\new_design\calc_button_select.png" />
+    <BundleResource Include="Resources\new_design\calc_button_select%402x.png" />
+    <BundleResource Include="Resources\new_design\calc_button.png" />
+    <BundleResource Include="Resources\new_design\calc_button%402x.png" />
+    <BundleResource Include="Resources\uk.lproj\about.html" />
+    <BundleResource Include="Resources\new_design\plus_btn_wide_n.png" />
+    <BundleResource Include="Resources\new_design\plus_btn_wide_s.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="Resources\iTunesArtwork" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="AccountCell.xib" />
+    <InterfaceDefinition Include="AccountCurrencyLine.xib" />
+    <InterfaceDefinition Include="AmountVC.xib" />
+    <InterfaceDefinition Include="Category4Cell.xib" />
+    <InterfaceDefinition Include="CategorySquareView.xib" />
+    <InterfaceDefinition Include="CurrencyCell.xib" />
+    <InterfaceDefinition Include="DateVC.xib" />
+    <InterfaceDefinition Include="DocumentView.xib" />
+    <InterfaceDefinition Include="DrawVC.xib" />
+    <InterfaceDefinition Include="EmergencyVC.xib" />
+    <InterfaceDefinition Include="ExpenseCell.xib" />
+    <InterfaceDefinition Include="ExpenseVC.xib" />
+    <InterfaceDefinition Include="FaqVC.xib" />
+    <InterfaceDefinition Include="Image4Cell.xib" />
+    <InterfaceDefinition Include="ImageSquareView.xib" />
+    <InterfaceDefinition Include="NameValueCell.xib" />
+    <InterfaceDefinition Include="NameVC.xib" />
+    <InterfaceDefinition Include="PinVC.xib" />
+    <InterfaceDefinition Include="SettingsVC.xib" />
+    <InterfaceDefinition Include="SheetVC.xib" />
+    <InterfaceDefinition Include="SimpleCell.xib" />
+    <InterfaceDefinition Include="SimpleCellBig.xib" />
+    <InterfaceDefinition Include="StatPeriodVC.xib" />
+    <InterfaceDefinition Include="UiFontSelectCell.xib" />
+    <InterfaceDefinition Include="ReportCell.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" />
+</Project>
