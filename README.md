@@ -1,8 +1,8 @@
+# Smart Budget 2 app source code
+
 ![In App Store](AppStoreScreen.png)
 
-# smartbudget2
-
-Once popular Smart Budget 2 app source code
+# How to build
 
 I have no idea how to build this. It was developed using Microsoft Xamarin Studio, that's
 why the source code in C#.
@@ -20,11 +20,15 @@ and modernize the app.
 
 # App Removal 
 
-It lived in Apple Store for 10+ years without updates, thanks to Apple API stability and decent coding quality.
+First crude version of Smart Budget was first released in 2009, then rewritten completely in 2010.
+
+Lsat time we managed to build it was 2015, fixing some problems with iOS 9.
+
+Then it lived in Apple Store for 10 years without updates, thanks to Apple API stability and decent coding quality.
 
 Unfortunately, in the end of 2025 Apple notified that App is no more compatible with the future iOS,
 so must be either updated or removed.
 
 It was impossible to update, so it was removed by Apple.
 
-It runs with minor problems (black stride at the top of the screen) on iOS 26.3.1 on my iPhone mini 12.
+It still runs with minor problems (black stride at the top of the screen) on iOS 26.3.1 on my iPhone mini 12.
