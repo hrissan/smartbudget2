@@ -22,13 +22,13 @@ and modernize the app.
 
 First crude version of Smart Budget was first released in 2009, then rewritten completely in 2010.
 
-Lsat time we managed to build it was 2015, fixing some problems with iOS 9.
+Last time we managed to build the App from source code was around 2015, fixing some problems with iOS 9.
 
 Then it lived in Apple Store for 10 years without updates, thanks to Apple API stability and decent coding quality.
 
 Unfortunately, in the end of 2025 Apple notified that App is no more compatible with the future iOS,
 so must be either updated or removed.
 
-It was impossible to update, so it was removed by Apple.
+It was impossible to update, so it was soon removed by Apple.
 
 It still runs with minor problems (black stride at the top of the screen) on iOS 26.3.1 on my iPhone mini 12.
