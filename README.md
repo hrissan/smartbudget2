@@ -1,3 +1,5 @@
+![In App Store](AppStoreScreen.png)
+
 # smartbudget2
 
 Once popular Smart Budget 2 app source code
@@ -15,3 +17,14 @@ to write the app again completely, which we started several times, but never fin
 
 Had we used XCode and Objective-C like every sane person, we'd be able to easily update
 and modernize the app.
+
+# App Removal 
+
+It lived in Apple Store for 10+ years without updates, thanks to Apple API stability and decent coding quality.
+
+Unfortunately, in the end of 2025 Apple notified that App is no more compatible with the future iOS,
+so must be either updated or removed.
+
+It was impossible to update, so it was removed by Apple.
+
+It runs with minor problems (black stride at the top of the screen) on iOS 26.3.1 on my iPhone mini 12.
