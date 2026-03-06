@@ -7,9 +7,9 @@
 I have no idea how to build this. It was developed using Microsoft Xamarin Studio, that's
 why the source code in C#.
 
-The idea was that it will somehow compile on Android and Windows.
+Xamarin promise was that it will somehow compile and even run on Android and Windows.
 
-The truth was the app had to be written every time for each platform anyway.
+The truth was the app had to be written again for each new platform anyway.
 
 So this Xamarin technology was the greatest mistake of Smart Budget development.
 Xamarin was quickly abandoned by Microsoft, leaving Smart Budget team with the need
