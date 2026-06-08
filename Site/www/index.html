@@ -1,0 +1,93 @@
+<?php
+
+function getBrowserLanguages($acc_lang)
+{
+    $langs = array();
+    $from = strtolower($acc_lang); // mb_ ,'UTF-8'
+    foreach (explode(',', $from) as $k => $pref)
+    {
+        // split $pref again by ';q='
+        // and decorate the language entries by inverted position
+        if (false !== ($i = strpos($pref, ';q=')))
+        {
+            $langs[substr($pref, 0, $i)] = array((float)substr($pref, $i + 3), -$k);
+        }
+        else
+        {
+            $langs[$pref] = array(1, -$k);
+        }
+    }
+    arsort($langs);
+    return array_keys($langs);
+}
+function checkLang($key, $our_lang)
+{
+    $i = strpos($key, $our_lang[1]);
+    if( $i !== 0 )
+        return false;
+    if( count($our_lang) < 3 )
+        return true;
+    $j = strpos($key, $our_lang[2]);
+    if( $j === false )
+        return false;
+    return true;
+}
+
+function findBestRedirect($user_langs, $our_langs)
+{
+    foreach($user_langs as $k)
+    {
+        foreach($our_langs as $our_lang)
+        {
+            if( checkLang($k, $our_lang) )
+                return $our_lang[0];
+        }
+    }
+    return "index_en";
+}
+
+$our_langs = array(
+    array("index_de",    "de"),
+//    array("index_en_gb", "en", "-gb"),
+//    array("index_en",    "en", "-us"),
+//    array("index_en",    "en", "-au"),
+//    array("index_en",    "en", "-ca"),
+    array("index_en",    "en"),
+//    array("index_es_mx", "es", "-mx"),
+//    array("index_es_mx", "es", "-us"),
+//    array("index_es",    "es", "-es"),
+    array("index_es",    "es"),
+//    array("index_fr_ca", "fr", "-ca"),
+//    array("index_fr",    "fr", "-fr"),
+//    array("index_fr",    "fr", "-be"),
+//    array("index_fr",    "fr", "-ch"),
+    array("index_fr",    "fr"),
+    array("index_it",    "it"),
+    array("index_jp",    "jp"),
+    array("index_ko",    "ko"),
+    array("index_nl",    "nl"),
+//    array("index_pt_br", "pt", "-br"),
+//    array("index_pt",    "pt", "-pt"),
+    array("index_pt",    "pt"),
+    array("index_ru",    "ru"),
+    array("index_sv",    "sv"),
+    array("index_th",    "th"),
+    array("index_zh-hant","zh", "-hant"),
+    array("index_zh-hant","zh", "-hk"),
+    array("index_zh-hant","zh", "-sg"),
+    array("index_zh-hant","zh", "-tw"),
+    array("index_zh-hans","zh", "-hans"),
+    array("index_zh-hans","zh", "-cn"),
+    array("index_zh-hans","zh"),
+    array("index_ar",    "ar"));
+    
+    $acc_lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+//    echo $acc_lang."\n";
+    $langs = getBrowserLanguages($acc_lang);
+    $redirectTo = findBestRedirect($langs, $our_langs);
+    
+    header('Location: http://smartbudgetapp.com/' . $redirectTo . '.html', true, 301);
+//    print_r($langs);
+//    print_r($our_langs);
+//    echo $redirectTo."\n";
+?>
